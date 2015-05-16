@@ -1,10 +1,5 @@
 @extends('app')
-@section('header')
-    <div class="header">
-        <h2>This is the header</h2>
-        <hr />
-    </div>
-@endsection
+
 
 @section('content')
     <div class="content">
@@ -28,9 +23,8 @@
     </div>
 @endsection
 
-@section('footer')
-    <div class="footer">
-        <hr />
-        <h4>Enzo || 2015</h4>
-    </div>
+@section('javascript')
+    <script type="application/javascript">
+
+    </script>
 @endsection

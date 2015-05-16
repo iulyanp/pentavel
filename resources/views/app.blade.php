@@ -25,6 +25,7 @@
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li><a href="{{ route('homepage') }}">Home</a></li>
+					<li><a href="{{ route('articles') }}">Blog</a></li>
 					<li><a href="{{ route('about') }}">About</a></li>
 					<li><a href="{{ route('contact') }}">Contact</a></li>
 				</ul>
@@ -47,13 +48,21 @@
 	</nav>
 
     <div class="container">
-        @yield('header')
+        <div class="header">
+            <h2>This is the header</h2>
+            <hr />
+        </div>
 
 
         @yield('content', 'No content yet!')
 
 
-        @yield('footer')
+        <div class="footer">
+            <hr />
+            <h4>Pentavel || 2015</h4>
+        </div>
+
+        @yield('javascript')
     </div>
 	<!-- Scripts -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>

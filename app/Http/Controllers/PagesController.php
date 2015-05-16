@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 class PagesController extends Controller
 {
 
+    public function blog()
+    {
+
+    }
+
     public function contact()
     {
         return view('pages.contact');
