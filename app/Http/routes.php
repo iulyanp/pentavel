@@ -14,17 +14,24 @@
 Route::get('/', ['as' => 'homepage', 'uses' => 'WelcomeController@index']);
 Route::get('/about', ['as' => 'about', 'uses' => 'PagesController@about']);
 Route::get('/contact', ['as' => 'contact', 'uses' => 'PagesController@contact']);
-Route::get('/articles', ['as' => 'articles', 'uses' => 'ArticleController@index']);
-Route::get('/article/{id}', ['as' => 'article', 'uses' => 'ArticleController@article'])
-    ->where('id', '[0-9]+');
 
-Route::post('/save/{id}', ['as' => 'save', 'uses' => 'WelcomeController@save'])
-    ->where('id', '[0-9]+');
 
+Route::resource('articles', 'ArticleController');
+//Route::get('/articles', ['as' => 'articles.index', 'uses' => 'ArticleController@index']);
+//Route::get('/articles/{id}', ['as' => 'articles.show', 'uses' => 'ArticleController@show'])
+//    ->where('id', '[0-9]+');
+//Route::get('/articles/create', ['as' => 'articles.create', 'uses' => 'ArticleController@create']);
+//Route::post('/articles', ['as' => 'articles.store', 'uses' => 'ArticleController@store']);
+//Route::get('/articles/edit', ['as' => 'articles.edit', 'uses' => 'ArticleController@create']);
+
+Route::post('/comments', ['as' => 'comments.store', 'uses' => 'CommentController@store']);
+
+Route::controllers(
+    [
+        'auth'     => 'Auth\AuthController',
+        'password' => 'Auth\PasswordController',
+    ]
+);
 
 Route::get('home', 'HomeController@index');
 
-Route::controllers([
-        'auth' => 'Auth\AuthController',
-        'password' => 'Auth\PasswordController',
-    ]);

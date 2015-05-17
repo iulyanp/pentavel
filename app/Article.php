@@ -1,5 +1,6 @@
 <?php namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
@@ -13,7 +14,31 @@ class Article extends Model
     protected $fillable = [
         'title',
         'body',
-        'published_at'
+        'published_at',
+        'user_id'
     ];
+
+    protected $dates = ['published_at'];
+
+    public function setPublishedAtAttribute($date)
+    {
+        $this->attributes['published_at'] = Carbon::createFromFormat('Y-m-d', $date);
+//        $this->attributes['published_at'] = Carbon::parse($date); // if you want the time to be 00:00:00
+    }
+
+    public function scopePublished($query)
+    {
+        return $query->where('published_at', '<=', Carbon::now());
+    }
+
+    public function scopeUnpublished($query)
+    {
+        return $query->where('published_at', '>=', Carbon::now());
+    }
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 
 }
