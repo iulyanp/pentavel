@@ -1,0 +1,17 @@
+{
+    "name": "pentavel",
+    "description": "My awesome blog",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "vendor/bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "jquery": "~2.1.3",
+        "bootstrap-sass-official": "~3.3.4",
+        "font-awesome": "~4.2.0"
+    }
+}

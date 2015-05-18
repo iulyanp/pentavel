@@ -1,13 +1,7 @@
 @extends('app')
 
 @section('header')
-<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-    <div class="site-heading">
-        <h1>Pentavel blog</h1>
-        <hr class="small">
-        <span class="subheading">A Pentavel Blog</span>
-    </div>
-</div>
+@include('partials.header', ['title' => 'Pentavel', 'body' => 'This is the articles body'])
 @endsection
 
 @section('content')
