@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\Article;
 use App\Comment;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -16,16 +17,16 @@ class CommentController extends Controller
         $this->middleware('auth');
     }
 
-    public function store(Request $request)
+    public function store($id, Request $request)
     {
-        $article = \App\Article::findOrFail(3);
+        $article = Article::findOrFail($id);
         $comment = new Comment($request->all());
 
         $comment->user()->associate(\Auth::user());
         $comment->article()->associate($article);
         $comment->save();
         
-        return Redirect::back()->with('message','Operation Successful !');
+        return Redirect::back()->with('message','Operation Successful!');
     }
 
 }

@@ -11,7 +11,11 @@ class Category extends Model {
      */
     protected $fillable = [
         'name',
-        'status'
     ];
+
+
+	public function articles() {
+		return $this->belongsToMany('App\Article');
+	}
 
 }

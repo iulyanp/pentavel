@@ -7,3 +7,26 @@ $font-family-sans-serif: "Roboto", Helvetica, Arial, sans-serif;
 body, label, .checkbox label {
   font-weight: 300;
 }
+
+.page-header {
+  margin-top: 0px;
+}
+
+.user_name{
+  font-size:14px;
+  font-weight: bold;
+}
+.comments-list .media{
+  border-bottom: 1px dotted #ccc;
+}
+
+.articles-list {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.title {
+  color: #0088CC;
+  text-decoration: underline;
+}

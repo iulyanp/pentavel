@@ -41,9 +41,14 @@ elixir(function(mix) {
         .scripts([
             'vendors/jquery.js',
             'vendors/bootstrap.js',
+            'vendors/vue.js',
+            'vendors/vue-resource.js',
             'clean-blog.js'
         ])
         .version('public/css/all.css')
+
+
+
 
 
 });

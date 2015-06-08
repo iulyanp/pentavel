@@ -16,7 +16,6 @@ class CreateArticlesTable extends Migration {
 		{
 			$table->increments('id');
             $table->integer('user_id')->unsigned();
-            $table->integer('category_id')->unsigned();
             $table->string('title');
             $table->text('body');
             $table->string('slug');
@@ -28,10 +27,6 @@ class CreateArticlesTable extends Migration {
                 ->on('users')
                 ->onDelete('cascade');
 
-            $table->foreign('category_id')
-                ->references('id')
-                ->on('categories')
-                ->onDelete('cascade');
 		});
 	}
 

@@ -24,7 +24,7 @@ Route::resource('articles', 'ArticleController');
 //Route::post('/articles', ['as' => 'articles.store', 'uses' => 'ArticleController@store']);
 //Route::get('/articles/edit', ['as' => 'articles.edit', 'uses' => 'ArticleController@create']);
 
-Route::post('/comments', ['as' => 'comments.store', 'uses' => 'CommentController@store']);
+Route::post('/comments/{id}', ['as' => 'comments.store', 'uses' => 'CommentController@store']);
 
 Route::controllers(
     [
@@ -35,3 +35,25 @@ Route::controllers(
 
 Route::get('home', 'HomeController@index');
 
+Route::group(['middleware' => 'auth'], function() {
+	Route::resource( 'user',  'ProfileController' , [ 'except' => 'show' ] );
+
+});
+
+Route::get('tags/{tag}', ['as' => 'tags', 'uses' => 'TagController@show']);
+Route::get('category/{category}', ['as' => 'category', 'uses' => 'CategoryController@show']);
+
+
+Route::get('blog', function() {
+	return view('blog.blog');
+});
+
+
+Route::get('api/articles', function() {
+	return App\Article::all();
+});
+
+Route::post('api/articles', function() {
+	Auth::user()->articles()->create( Request::all() );
+
+});

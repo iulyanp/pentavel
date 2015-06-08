@@ -35,6 +35,13 @@
 							</div>
 						</div>
 
+                        <div class="form-group">
+							<label class="col-md-4 control-label">Location</label>
+							<div class="col-md-6">
+								<input type="text" class="form-control" name="location" value="{{ old('location') }}">
+							</div>
+						</div>
+
 						<div class="form-group">
 							<label class="col-md-4 control-label">E-Mail Address</label>
 							<div class="col-md-6">

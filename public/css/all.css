@@ -5792,6 +5792,25 @@ button.close {
 body, label, .checkbox label {
   font-weight: 300; }
 
+.page-header {
+  margin-top: 0px; }
+
+.user_name {
+  font-size: 14px;
+  font-weight: bold; }
+
+.comments-list .media {
+  border-bottom: 1px dotted #ccc; }
+
+.articles-list {
+  list-style: none;
+  margin: 0px;
+  padding: 0px; }
+
+.title {
+  color: #0088CC;
+  text-decoration: underline; }
+
 /*# sourceMappingURL=app.css.map */
 /*!
  * Clean Blog v1.0.0 (http://startbootstrap.com)
@@ -5940,14 +5959,14 @@ hr.small {
 .intro-header .site-heading,
 .intro-header .post-heading,
 .intro-header .page-heading {
-  padding: 100px 0 50px;
+  padding: 60px 0 50px;
   color: white;
 }
 @media only screen and (min-width: 768px) {
   .intro-header .site-heading,
   .intro-header .post-heading,
   .intro-header .page-heading {
-    padding: 150px 0;
+    padding: 110px 0;
   }
 }
 .intro-header .site-heading,
@@ -5971,7 +5990,7 @@ hr.small {
 @media only screen and (min-width: 768px) {
   .intro-header .site-heading h1,
   .intro-header .page-heading h1 {
-    font-size: 80px;
+    font-size: 50px;
   }
 }
 .intro-header .post-heading h1 {
