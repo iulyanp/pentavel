@@ -1,7 +1,7 @@
 <?php
 
 class ExampleTest extends TestCase {
-
+    protected $baseUrl = 'http://laracast.vm';
 	/**
 	 * A basic functional test example.
 	 *

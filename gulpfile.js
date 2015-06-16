@@ -12,6 +12,9 @@
  */
 
 elixir(function(mix) {
+
+    mix.phpUnit();
+
     mix
         .sass('app.scss')
         .copy(
